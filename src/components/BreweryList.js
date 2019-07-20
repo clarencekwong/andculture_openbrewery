@@ -1,13 +1,29 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
 import Brewery from './Brewery'
+import { connect } from 'react-redux'
+import uuid from 'uuid'
+import { Card } from 'semantic-ui-react'
 
 class BreweryList extends React.Component {
+
+  renderBreweries = () => {
+    return this.props.brewery.map(brewery => <Brewery key={uuid()} brewery={brewery}/>)
+  }
+
   render () {
     return (
-      <Brewery />
+      <Card.Group itemsPerRow="4">
+        {this.renderBreweries()}
+      </Card.Group>
     )
   }
 }
 
-export default BreweryList;
+function mapStateToProps(state) {
+  // console.log(state.brewery.brewery)
+  return {
+    brewery: state.brewery.brewery
+  }
+}
+
+export default connect(mapStateToProps)(BreweryList);

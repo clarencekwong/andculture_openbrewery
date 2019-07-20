@@ -1,11 +1,15 @@
 import React from 'react'
-// import PropTypes from 'prop-types'
 import BreweryList from '../components/BreweryList'
+import { Container } from 'semantic-ui-react'
 
-const BreweryContainer = (props) => {
-  return (
-    <BreweryList />
-  )
+class BreweryContainer extends React.Component {
+  render () {
+    return (
+      <Container>
+        <BreweryList />
+      </Container>
+    )
+  }
 }
 
-export default BreweryContainer
+export default BreweryContainer;
