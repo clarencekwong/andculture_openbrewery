@@ -2,20 +2,20 @@
   text-align: center;
 }
 
-div.ui.card {
+.brewery-card {
   width: 100vw !important;
 }
 
 @media only screen and (min-width: 600px) {
   /* For tablets: */
-  div.ui.card {
+  .brewery-card {
     width: calc(25% - 1.5em) !important;
   }
 }
 
 @media only screen and (min-width: 768px) {
   /* For desktop: */
-  div.ui.card {
+  .brewery-card {
     width: calc(25% - 1.5em) !important;
   }
 }

@@ -1,8 +1,8 @@
-import React from 'react'
-import Brewery from './Brewery'
-import { connect } from 'react-redux'
-import uuid from 'uuid'
-import { Card } from 'semantic-ui-react'
+import React from 'react';
+import Brewery from './Brewery';
+import { connect } from 'react-redux';
+import uuid from 'uuid';
+import { Card } from 'semantic-ui-react';
 
 class BreweryList extends React.Component {
 

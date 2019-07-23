@@ -1,31 +1,30 @@
-import React from 'react'
-import { Button, Divider } from 'semantic-ui-react'
-import { connect } from 'react-redux'
-import { toggleView } from '../action'
+import React from 'react';
+import { Button, Divider } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import { toggleView } from '../action';
 import GoogleMapReact from 'google-map-react';
 
-import GoogleMarker from './GoogleMarker'
+import GoogleMarker from './GoogleMarker';
 
 class BreweryDetail extends React.Component {
 
   handleClick = () => {
-    console.log('clicked back')
-    this.props.toggleView()
+    this.props.toggleView();
   }
 
   render () {
-    const { selectedBrewery } = this.props
-    const lat = parseFloat(selectedBrewery.latitude)
-    const lng = parseFloat(selectedBrewery.longitude)
-    const center = { lat: lat, lng: lng }
+    const { selectedBrewery } = this.props;
+    const lat = parseFloat(selectedBrewery.latitude);
+    const lng = parseFloat(selectedBrewery.longitude);
+    const center = { lat, lng };
     return (
       <div>
         <h1>{selectedBrewery.name}</h1>
-        <p>{selectedBrewery.street ? selectedBrewery.street : 'NA'}</p>
+        <p>{selectedBrewery.street ? selectedBrewery.street : 'N/A'}</p>
         <p>{` ${selectedBrewery.city}, ${selectedBrewery.state}, ${selectedBrewery.postal_code}`}</p>
         <a href={selectedBrewery.website_url} target="_blank" rel="noopener noreferrer">Link to website</a>
         <Divider />
-        { lat ?
+        { lat && lng ?
         <div style={{ height: '60vh', width: '100%' }}>
           <GoogleMapReact
             bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_API_KEY }}
@@ -51,7 +50,6 @@ class BreweryDetail extends React.Component {
 }
 
 function mapStateToProps(state) {
-  // console.log(state.brewery.selectedBrewery)
   return {
     selectedBrewery: state.brewery.selectedBrewery
   }

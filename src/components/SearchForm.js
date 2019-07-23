@@ -1,8 +1,8 @@
-import React from 'react'
-import BreweryAdapter from '../adapters/BreweryAdapter'
-import { Form, Button } from 'semantic-ui-react'
-import { connect } from 'react-redux'
-import { toggleReset } from '../action'
+import React from 'react';
+import BreweryAdapter from '../adapters/BreweryAdapter';
+import { Form, Button } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import { toggleReset } from '../action';
 
 class SearchForm extends React.Component {
   state = {
@@ -19,11 +19,11 @@ class SearchForm extends React.Component {
     e.preventDefault();
     // Should not return anything if user did not input, OpenBreweryDB retrieves breweries with empty city paramaters
     if (this.state.city) {
-      BreweryAdapter.getBreweriesByCity(this.state.city)
+      BreweryAdapter.getBreweriesByCity(this.state.city);
+      this.setState({ city: "" });
+      e.target.reset();
+      this.props.toggleReset();
     }
-    this.setState({ city: "" })
-    e.target.reset()
-    this.props.toggleReset()
   }
 
   render() {
