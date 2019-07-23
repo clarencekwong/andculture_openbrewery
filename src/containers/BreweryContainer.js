@@ -8,7 +8,7 @@ class BreweryContainer extends React.Component {
   render () {
     const { toggleView } = this.props;
     return (
-      <Container>
+      <Container className="brewery-container">
         {toggleView ? <BreweryDetail /> : <BreweryList />}
       </Container>
     )

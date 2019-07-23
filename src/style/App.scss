@@ -1,9 +1,21 @@
+@import 'variable.scss';
+
 .App {
   text-align: center;
 }
 
 .brewery-card {
   width: 100vw !important;
+  background-color: $cardBackgroundColor !important;
+}
+
+.search-container {
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+}
+
+.header-container {
+  background-color: $backgroundColor
 }
 
 @media only screen and (min-width: 600px) {

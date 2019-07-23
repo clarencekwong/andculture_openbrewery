@@ -15,10 +15,10 @@ class Brewery extends React.Component {
     return (
       <Card className="brewery-card">
         <Card.Content>
-            <Card.Header>{brewery.name}</Card.Header>
-            <Card.Description>{brewery.brewery_type}</Card.Description>
-            <Card.Description>{brewery.street ? brewery.street : 'N/A'}</Card.Description>
-            <Card.Description>{` ${brewery.city}, ${brewery.state}, ${brewery.postal_code}`}</Card.Description>
+            <Card.Header className="brewery-header">{brewery.name}</Card.Header>
+            <Card.Description className="brewery-description">{brewery.brewery_type}</Card.Description>
+            <Card.Description className="brewery-description">{brewery.street ? brewery.street : 'N/A'}</Card.Description>
+            <Card.Description className="brewery-description">{` ${brewery.city}, ${brewery.state}, ${brewery.postal_code}`}</Card.Description>
             <Card.Description><a href={brewery.website_url} target="_blank" rel="noopener noreferrer">Link to website</a></Card.Description>
             <Button basic onClick={this.handleClick}>More Details</Button>
           </Card.Content>

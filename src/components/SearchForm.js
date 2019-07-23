@@ -30,7 +30,7 @@ class SearchForm extends React.Component {
     return (
       <Form onSubmit={this.handleSubmit}>
         <Form.Field>
-          <label>City</label>
+          <label>Search Brewery By City</label>
           <input placeholder='City' value={this.state.city} onChange={this.handleChange} />
         </Form.Field>
         <Button type='submit'>Submit</Button>

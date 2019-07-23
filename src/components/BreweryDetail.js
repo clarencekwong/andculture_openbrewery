@@ -19,7 +19,7 @@ class BreweryDetail extends React.Component {
     const center = { lat, lng };
     return (
       <div>
-        <h1>{selectedBrewery.name}</h1>
+        <h1 className="brewery-header">{selectedBrewery.name}</h1>
         <p>{selectedBrewery.street ? selectedBrewery.street : 'N/A'}</p>
         <p>{` ${selectedBrewery.city}, ${selectedBrewery.state}, ${selectedBrewery.postal_code}`}</p>
         <a href={selectedBrewery.website_url} target="_blank" rel="noopener noreferrer">Link to website</a>
