@@ -1,7 +1,7 @@
 import store from '../store';
 
 class BreweryAdapter {
-  static breweryURL = 'http://andculture-ob-api.herokuapp.com/api/v1/breweries/by_city='
+  static breweryURL = 'https://andculture-ob-api.herokuapp.com/api/v1/breweries/by_city='
 
   static getBreweriesByCity(city) {
     return fetch(`${this.breweryURL}${city}`)
